@@ -1,0 +1,108 @@
+* {
+    font-family: 'VT323', sans-serif;
+}
+
+body {
+    background-image: url(https://steamuserimages-a.akamaihd.net/ugc/2427879677076158512/5492E272EDFCBADCEDC05512BF7FB863EA2CDFED/?imw=637&imh=358&ima=fit&impolicy=Letterbox&imcolor=%23000000&letterbox=true);
+    background-repeat: no-repeat;
+    background-size: cover;
+    z-index: 0;
+    
+}
+
+section {
+    overflow: hidden;
+    background-color: rgba(0, 0, 0, 0.523);
+}
+
+.container {
+    text-align: center;
+    z-index: 2;
+    margin-top: 20vh;
+    
+}
+
+.container img{
+    max-width: 80%;
+    height: auto;
+    animation: slide  3s ease-in-out, zoom 3s infinite;
+    
+}
+
+@keyframes slide {
+
+    0% {
+        margin-top: -200px;
+    }
+
+    50% {
+        margin-top: 100px;
+    }
+
+    100% {
+        margin-top: 0px;
+    }
+    
+}
+
+.img-fluid {
+    filter: drop-shadow(0px 0px 60px black);
+}
+
+@keyframes zoom {
+
+    0% {
+        transform: scale(1.08);
+    }
+
+    50% {
+        transform: scale(1);
+    }
+
+    100% {
+        transform: scale(1.08);
+    }
+
+}
+
+.d-block {
+    width: 15em;
+}
+
+.container a {
+    margin: 1.6em auto;
+}
+
+.terminos {
+    font-size: 22px;
+}
+
+.navbar {
+    left: 10px;
+    z-index: 999;
+}
+
+@media (max-width: 1380px) {
+
+    .container {
+            margin-top: 7vh;
+        }
+
+
+}
+
+@media (max-width: 999px) {
+
+    .container {
+        margin-top: 17vh;
+    }
+
+}
+
+@media (max-width: 660px) {
+
+    .container {
+        margin-top: 30vh;
+    }
+
+}
