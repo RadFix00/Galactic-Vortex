@@ -17,8 +17,8 @@ function muteSound() {
 
     var icon = document.querySelector('img'); // Selecciona el icono de sonido
     if (thissound.muted) {
-        icon.src = '/resourses/mute.png'; // Cambia el icono cuando está en mute
+        icon.src = 'resourses/mute.png'; // Cambia el icono cuando está en mute
     } else {
-        icon.src = '/resourses/sound.png'; // Cambia el icono cuando no está en mute
+        icon.src = 'resourses/sound.png'; // Cambia el icono cuando no está en mute
     }
 }
