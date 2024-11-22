@@ -40,7 +40,7 @@ section {
 
 /* Nave */
 #ship {
-    background-image: url(resourses/nave.png);
+    background-image: url(../resourses/nave.png);
     background-size: contain;  /* Asegura que la imagen se ajuste dentro del contenedor */
     background-repeat: no-repeat;  /* Evita que la imagen se repita */
     position: absolute;
