@@ -18,25 +18,41 @@
             <a class="navbar-brand" href="../index.html">
                 <img onmouseover="PlaySound('mySound')" onmouseout="StopSound('mySound')" src="../resourses/back.png" width="70" height="70" alt="">
             </a>
-            <form class="form-inline " >    
-                <h1 class=" mr-5 my-4">Score: que pedo soy un score :v</h1>
+            <div>
+                <h1 id="streakBoard"></h1>
+            </div>
+            <div>
+                <h1 id="bestStreakBoard"></h1>
+            </div> 
+            <form class="form-inline " >   
+                <h1 id="scoreBoard" class=" mr-5 my-4">Score: 0</h1>
             </form>
         </nav>
         <hr class="line">
         <div>
             <ul class="nav flex-column">
                 <li class="nav-item">
-                    <h1 class="p-2 d-inline-block">The best points</h1>
-                    <p>afsadf</p>
+                    <h1 class="p-1 d-inline-block">The best points</h1>
+                    <h1 id="highScoreBoard" class="p-1">High Score: 0</h1>
                     <div class="vertical-line"></div>
                 </li>
             </ul>
         </div>
         <div id="gameArea">
-            <div id="ship" ></div>
-
+            <div id="ship"></div>
+            <div id="bullet"></div>
+            <div id="enemy"></div>
+            <div id="healthBarContainer">
+                <div id="healthBar"></div>
+            </div>
+            <div id="turboContainer">
+                <div id="turboBar"></div>
+            </div>
         </div>
+
     </section>
+    <audio id="turbosound" src="https://cdn.freesound.org/previews/784/784909_5287430-lq.mp3"></audio>
+    <audio id="bulletsound" src="https://cdn.freesound.org/previews/421/421704_2927958-lq.ogg"></audio>
     <audio id='mySound' src='https://cdn.freesound.org/previews/658/658261_13579627-lq.mp3'></audio>
     <script src="../js/game.js"></script>
 </body>
