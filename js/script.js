@@ -22,3 +22,26 @@ function muteSound() {
         icon.src = 'resourses/sound.png'; // Cambia el icono cuando no está en mute
     }
 }
+
+const bgSound = document.getElementById("bgsnd");
+
+document.addEventListener("click", () => {
+    bgSound.play().catch(error => {
+        console.log("El navegador bloqueó el audio:", error);
+    });
+}, { once: true });
+
+function muteSound() {
+    bgSound.muted = !bgSound.muted;
+}
+
+function PlaySound(soundId) {
+    const sound = document.getElementById(soundId);
+    sound.currentTime = 0;
+    sound.volume = 0.05;
+    bgSound.volume = 0.8; // Establece el volumen al 8%
+    sound.play().catch(error => {
+        console.log("No se pudo reproducir el sonido:", error);
+    });
+}
+

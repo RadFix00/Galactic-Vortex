@@ -18,6 +18,7 @@ const scoreBoard = document.getElementById("scoreBoard");
 const highScoreBoard = document.getElementById("highScoreBoard");
 const healthBar = document.getElementById("healthBar");
 const turboBar = document.getElementById("turboBar");
+const name = document.getElementById("name")
 
 let shipX = gameArea.offsetWidth / 2 - ship.offsetWidth / 2;
 let shipY = gameArea.offsetHeight - 60;
@@ -32,15 +33,15 @@ let health = 100;
 let turbo = 100;
 let isTurboActive = false;
 
-highScoreBoard.textContent = `High Score: ${highScore}`;
+highScoreBoard.textContent = `Maximo Puntaje: ${highScore}`;
 
 let currentStreak = 0;
 let bestStreak = localStorage.getItem("bestStreak") || 0;
 const streakBoard = document.getElementById("streakBoard");
 const bestStreakBoard = document.getElementById("bestStreakBoard");
 
-streakBoard.textContent = `Streak: ${currentStreak}`;
-bestStreakBoard.textContent = `Best Streak: ${bestStreak}`;
+streakBoard.textContent = `Combo: ${currentStreak}`;
+bestStreakBoard.textContent = `Mejor Combo: ${bestStreak}`;
 
 const keysPressed = {};
 
@@ -199,19 +200,19 @@ function checkBulletCollision(bullet, bulletInterval) {
 function updateScore() {
     score += 10;
     currentStreak += 1;
-    scoreBoard.textContent = `Score: ${score}`;
-    streakBoard.textContent = `Streak: ${currentStreak}`;
+    scoreBoard.textContent = `Puntos: ${score}`;
+    streakBoard.textContent = `Combo: ${currentStreak}`;
 
     if (currentStreak > bestStreak) {
         bestStreak = currentStreak;
-        localStorage.setItem("bestStreak", bestStreak);
-        bestStreakBoard.textContent = `Best Streak: ${bestStreak}`;
+        localStorage.setItem("Mejor Combo", bestStreak);
+        bestStreakBoard.textContent = `Mejor Combo: ${bestStreak}`;
     }
 
     if (score > highScore) {
         highScore = score;
-        localStorage.setItem("highScore", highScore);
-        highScoreBoard.textContent = `High Score: ${highScore}`;
+        localStorage.setItem("Maximo Puntaje", highScore);
+        highScoreBoard.textContent = `Maximo Puntaje: ${highScore}`;
     }
 
     updateDifficulty();
@@ -219,7 +220,7 @@ function updateScore() {
 
 function resetStreak() {
     currentStreak = 0;
-    streakBoard.textContent = `Streak: ${currentStreak}`;
+    streakBoard.textContent = `Combo: ${currentStreak}`;
 }
 
 // Barra de vida
