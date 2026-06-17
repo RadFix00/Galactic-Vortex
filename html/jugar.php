@@ -1,3 +1,20 @@
+<?php
+include "../php/conexion.php";
+
+$sql = "SELECT nickname, puntaje
+        FROM jugadores 
+        ORDER BY puntaje DESC 
+        LIMIT 1";
+
+$result = $conn->query($sql);
+
+$mejorJugador = null;
+
+if ($result && $result->num_rows > 0) {
+    $mejorJugador = $result->fetch_assoc();
+}
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -12,6 +29,8 @@
         crossorigin="anonymous"></script>
     <link href="https://fonts.googleapis.com/css2?family=VT323&display=swap" rel="stylesheet">
 </head>
+
+
 <body>
     <section>
         <nav class="navbar ">
@@ -33,8 +52,15 @@
             <ul class="nav flex-column">
                 <li class="nav-item">
                     <h1 class="p-1 d-inline-block">Mejor Puntaje</h1>
-                    <h1 id="highScoreBoard" class="p-1">Maximo Puntaje: 0</h1>
-                    <div class="vertical-line"></div>
+                    <?php if ($mejorJugador): ?>
+                        <h1 id="puntaje">
+                            <?php echo $mejorJugador["puntaje"]; ?> puntos
+                    </h1>
+                    <?php else: ?>
+                        <h1 id="puntaje">Todavía no hay puntajes</h1>
+                    <?php endif; ?>
+                    <h1 id="highScoreBoard" class="p-1">Tu Puntaje: 0</h1>
+                  
                 </li>
             </ul>
         </div>

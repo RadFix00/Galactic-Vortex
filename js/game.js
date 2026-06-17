@@ -9,6 +9,7 @@ function StopSound(soundobj) {
     var thissound = document.getElementById(soundobj);
     thissound.pause();
     thissound.currentTime = 0;
+    thissound.volume = 0.0;
 }
 
 // Elementos del juego
@@ -33,7 +34,7 @@ let health = 100;
 let turbo = 100;
 let isTurboActive = false;
 
-highScoreBoard.textContent = `Maximo Puntaje: ${highScore}`;
+highScoreBoard.textContent = `Tu Puntaje: ${highScore}`;
 
 let currentStreak = 0;
 let bestStreak = localStorage.getItem("bestStreak") || 0;
@@ -212,7 +213,7 @@ function updateScore() {
     if (score > highScore) {
         highScore = score;
         localStorage.setItem("Maximo Puntaje", highScore);
-        highScoreBoard.textContent = `Maximo Puntaje: ${highScore}`;
+        highScoreBoard.textContent = `Tu Puntaje: ${highScore}`;
     }
 
     updateDifficulty();

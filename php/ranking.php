@@ -4,7 +4,7 @@ include "conexion.php";
 $sql = "SELECT nickname, puntaje, mejor_combo, tiempo_vivo, fecha 
         FROM jugadores 
         ORDER BY puntaje DESC 
-        LIMIT 10";
+        LIMIT 6";
 
 $result = $conn->query($sql);
 ?>
