@@ -237,7 +237,26 @@ function reduceHealth(amount) {
 
 // Fin del juego
 function gameOver() {
-    location.reload();
+    fetch("../php/guardarpuntaje.php", {
+        method: "POST",
+        headers: {
+            "Content-Type": "application/json"
+        },
+        body: JSON.stringify({
+            puntaje: score,
+            mejor_combo: currentStreak,
+            tiempo_vivo: tiempoVivo
+        })
+    })
+    .then(response => response.json())
+    .then(data => {
+        console.log(data);
+        window.location.href = "../php/ranking.php";
+    })
+    .catch(error => {
+        console.error("Error guardando puntaje:", error);
+        window.location.href = "../php/ranking.php";
+    });
 }
 
 let turboSoundPlaying = false;

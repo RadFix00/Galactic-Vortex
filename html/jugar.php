@@ -15,7 +15,7 @@
 <body>
     <section>
         <nav class="navbar ">
-            <a class="navbar-brand" href="../index.html">
+            <a class="navbar-brand" href="../index.php">
                 <img onmouseover="PlaySound('mySound')" onmouseout="StopSound('mySound')" src="../resourses/back.png" width="70" height="70" alt="">
             </a>
             <div>

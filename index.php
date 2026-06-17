@@ -27,8 +27,24 @@
             <div class="mb-4">
                 <img src="resourses/letter.png" alt="" class="img-fluid">
             </div>
-            <input class="btn-lg shadow-lg my-1" type="text" placeholder="NickName" id="name">
-            <a onmouseover="PlaySound('mySound')" onmouseout="StopSound('mySound')" class="d-block btn btn-lg btn-outline-light shadow-lg my-4" href="html/jugar.html">Jugar</a>
+            <div>
+                 <form action="php/guardarjugador.php" method="POST">
+                    <input 
+                        class="btn-lg shadow-lg my-1" 
+                        type="text" 
+                        name="nickname" 
+                        placeholder="NickName"
+                        required
+                    >
+                    <button 
+                        onmouseover="PlaySound('mySound')" 
+                        onmouseout="StopSound('mySound')" 
+                        class="d-block btn btn-lg btn-outline-light shadow-lg my-4" 
+                        type="submit">
+                        Jugar
+                    </button>
+                </form>
+            </div>
             <a onmouseover="PlaySound('mySound')" onmouseout="StopSound('mySound')" class="d-block btn btn-lg btn-outline-light shadow-lg my-4" href="">Salir</a>
             <a onmouseover="PlaySound('mySound')" onmouseout="StopSound('mySound')" href="html/terminoscondiciones.html" class="terminos">¿Como Jugar?</a>
         </div>
