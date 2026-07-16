@@ -10,11 +10,13 @@ section {
     height: 100vh;
     width: 100%;
     overflow: hidden;
+    
 }
 
 .line {
     background-color: white;
     border: 8px solid white;
+    
 }
 
 .vertical-line {
@@ -120,4 +122,6 @@ section {
     border-radius: 50%; /* Hace que el power-up sea circular */
     position: absolute; /* Asegura que se posicione correctamente en el juego */
     box-shadow: 0 0 10px rgba(0, 255, 0, 0.5); /* Añade un efecto de brillo */
+   
 }
+

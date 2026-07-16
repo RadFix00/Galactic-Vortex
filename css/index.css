@@ -29,6 +29,10 @@ section {
     
 }
 
+div form {
+    border: 1px solid red;
+}
+
 @keyframes slide {
 
     0% {
@@ -65,9 +69,6 @@ section {
 
 }
 
-.d-block {
-    width: 15em;
-}
 
 .container a {
     margin: 1.6em auto;
@@ -105,4 +106,27 @@ section {
         margin-top: 30vh;
     }
 
+}
+
+.game-form {
+    width: 100%;
+    border: 1px solid red;
+}
+
+.game-form input,
+.game-button {
+    display: block;
+    width: 15em;
+    margin-left: auto !important;
+    margin-right: auto !important;
+}
+
+.game-form input {
+    padding: 10px 15px;
+    font-size: 22px;
+    text-align: center;
+}
+
+.game-button {
+    box-sizing: border-box;
 }
