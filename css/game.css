@@ -146,6 +146,107 @@ section {
     color: red;
 }
 
+#mobileControls {
+    display: none;
+}
+
+@media screen and (max-width: 768px) {
+
+    body {
+        overflow: hidden;
+        touch-action: none;
+    }
+
+    #mobileControls {
+        display: flex;
+        position: fixed;
+        left: 0;
+        right: 0;
+        bottom: 15px;
+        z-index: 9999;
+        justify-content: space-between;
+        align-items: flex-end;
+        padding: 0 18px;
+        pointer-events: none;
+    }
+
+    .movement-controls {
+        position: relative;
+        width: 170px;
+        height: 170px;
+        pointer-events: auto;
+    }
+
+    .action-controls {
+        display: flex;
+        align-items: flex-end;
+        gap: 14px;
+        pointer-events: auto;
+    }
+
+    .control-button {
+        width: 58px;
+        height: 58px;
+        padding: 0;
+        border: 2px solid white;
+        border-radius: 50%;
+        background: rgba(0, 0, 0, 0.65);
+        color: white;
+        font-family: "VT323", monospace;
+        font-size: 26px;
+        user-select: none;
+        -webkit-user-select: none;
+        touch-action: none;
+    }
+
+    .control-button:active,
+    .control-button.active {
+        background: rgba(255, 255, 255, 0.85);
+        color: black;
+        transform: scale(0.92);
+    }
+
+    .up-button {
+        position: absolute;
+        top: 0;
+        left: 56px;
+    }
+
+    .left-button {
+        position: absolute;
+        top: 56px;
+        left: 0;
+    }
+
+    .down-button {
+        position: absolute;
+        top: 112px;
+        left: 56px;
+    }
+
+    .right-button {
+        position: absolute;
+        top: 56px;
+        left: 112px;
+    }
+
+    .shoot-button {
+        width: 78px;
+        height: 78px;
+        font-size: 32px;
+        border-color: red;
+        background: rgba(160, 0, 0, 0.75);
+    }
+
+    .turbo-button {
+        width: 65px;
+        height: 65px;
+        font-size: 18px;
+        border-color: cyan;
+        background: rgba(0, 80, 120, 0.75);
+    }
+}
+
 @media (max-width: 660px) {
 
     #gameArea {
@@ -190,6 +291,106 @@ section {
         right: 30px;
         color: red;
     }
+
+    .enemy {
+        width: 110px;
+        height: 110px;
+    }
+
+     body {
+        overflow: hidden;
+        touch-action: none;
+    }
+
+    #mobileControls {
+        display: flex;
+        position: fixed;
+        left: 0;
+        right: 0;
+        bottom: 15px;
+        z-index: 9999;
+        justify-content: space-between;
+        align-items: flex-end;
+        padding: 0 18px;
+        pointer-events: none;
+    }
+
+    .movement-controls {
+        position: relative;
+        width: 170px;
+        height: 170px;
+        pointer-events: auto;
+    }
+
+    .action-controls {
+        display: flex;
+        align-items: flex-end;
+        gap: 14px;
+        pointer-events: auto;
+    }
+
+    .control-button {
+        width: 58px;
+        height: 58px;
+        padding: 0;
+        border: 2px solid white;
+        border-radius: 50%;
+        background: rgba(0, 0, 0, 0.65);
+        color: white;
+        font-family: "VT323", monospace;
+        font-size: 26px;
+        user-select: none;
+        -webkit-user-select: none;
+        touch-action: none;
+    }
+
+    .control-button:active,
+    .control-button.active {
+        background: rgba(255, 255, 255, 0.85);
+        color: black;
+        transform: scale(0.92);
+    }
+
+    .up-button {
+        position: absolute;
+        top: 0;
+        left: 56px;
+    }
+
+    .left-button {
+        position: absolute;
+        top: 56px;
+        left: 0;
+    }
+
+    .down-button {
+        position: absolute;
+        top: 112px;
+        left: 56px;
+    }
+
+    .right-button {
+        position: absolute;
+        top: 56px;
+        left: 112px;
+    }
+
+    .shoot-button {
+        width: 78px;
+        height: 78px;
+        font-size: 32px;
+        border-color: red;
+        background: rgba(160, 0, 0, 0.75);
+    }
+
+    .turbo-button {
+        width: 65px;
+        height: 65px;
+        font-size: 18px;
+        border-color: cyan;
+        background: rgba(0, 80, 120, 0.75);
+    }
+    
 
 }
 

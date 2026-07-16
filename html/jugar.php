@@ -97,6 +97,65 @@
                     <div id="turboBar"></div>
                 </div>
             </div>
+            <div id="mobileControls">
+
+            <div class="movement-controls">
+                    <button
+                        type="button"
+                        class="control-button up-button"
+                        data-key="ArrowUp"
+                        aria-label="Mover hacia arriba"
+                    >
+                        ▲
+                    </button>
+
+                    <button
+                        type="button"
+                        class="control-button left-button"
+                        data-key="ArrowLeft"
+                        aria-label="Mover hacia la izquierda"
+                    >
+                        ◀
+                    </button>
+
+                    <button
+                        type="button"
+                        class="control-button down-button"
+                        data-key="ArrowDown"
+                        aria-label="Mover hacia abajo"
+                    >
+                        ▼
+                    </button>
+
+                    <button
+                        type="button"
+                        class="control-button right-button"
+                        data-key="ArrowRight"
+                        aria-label="Mover hacia la derecha"
+                    >
+                        ▶
+                    </button>
+                </div>
+
+                <div class="action-controls">
+                    <button
+                        type="button"
+                        id="turboButton"
+                        class="control-button turbo-button"
+                    >
+                        Turbo
+                    </button>
+
+                    <button
+                        type="button"
+                        id="shootButton"
+                        class="control-button shoot-button"
+                    >
+                        🔥
+                    </button>
+                </div>
+
+            </div>
 
         </section>
         <audio id="turbosound" src="https://cdn.freesound.org/previews/784/784909_5287430-lq.mp3"></audio>

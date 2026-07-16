@@ -20,6 +20,7 @@ const highScoreBoard = document.getElementById("highScoreBoard");
 const healthBar = document.getElementById("healthBar");
 const turboBar = document.getElementById("turboBar");
 const name = document.getElementById("name")
+const keysPressed = {};
 
 let shipX = gameArea.offsetWidth / 2 - ship.offsetWidth / 2;
 let shipY = gameArea.offsetHeight - 60;
@@ -44,12 +45,105 @@ const bestStreakBoard = document.getElementById("bestStreakBoard");
 streakBoard.textContent = `Combo: ${currentStreak}`;
 bestStreakBoard.textContent = `Mejor Combo: ${bestStreak}`;
 
-const keysPressed = {};
 
 setInterval(() => {
     tiempoVivo++; // Incrementa cada segundo
 }, 1000);
 
+// Botones
+
+const movementButtons = document.querySelectorAll(
+    "#mobileControls [data-key]"
+);
+
+function activateMovement(button) {
+    const key = button.dataset.key;
+
+    keysPressed[key] = true;
+    button.classList.add("active");
+}
+
+function deactivateMovement(button) {
+    const key = button.dataset.key;
+
+    delete keysPressed[key];
+    button.classList.remove("active");
+}
+
+movementButtons.forEach((button) => {
+
+    button.addEventListener("pointerdown", (event) => {
+        event.preventDefault();
+
+        button.setPointerCapture(event.pointerId);
+        activateMovement(button);
+    });
+
+    button.addEventListener("pointerup", (event) => {
+        event.preventDefault();
+        deactivateMovement(button);
+    });
+
+    button.addEventListener("pointercancel", () => {
+        deactivateMovement(button);
+    });
+
+    button.addEventListener("lostpointercapture", () => {
+        deactivateMovement(button);
+    });
+});
+
+const shootButton = document.getElementById("shootButton");
+
+if (shootButton) {
+    shootButton.addEventListener("pointerdown", (event) => {
+        event.preventDefault();
+        event.stopPropagation();
+
+        shootButton.classList.add("active");
+        shootBullet();
+    });
+
+    shootButton.addEventListener("pointerup", (event) => {
+        event.preventDefault();
+        event.stopPropagation();
+
+        shootButton.classList.remove("active");
+    });
+
+    shootButton.addEventListener("pointercancel", () => {
+        shootButton.classList.remove("active");
+    });
+}
+
+const turboButton = document.getElementById("turboButton");
+
+if (turboButton) {
+
+    turboButton.addEventListener("pointerdown", (event) => {
+        event.preventDefault();
+        event.stopPropagation();
+
+        if (turbo > 20) {
+            isTurboActive = true;
+            turboButton.classList.add("active");
+        }
+    });
+
+    const stopTurbo = (event) => {
+        if (event) {
+            event.preventDefault();
+            event.stopPropagation();
+        }
+
+        isTurboActive = false;
+        turboButton.classList.remove("active");
+    };
+
+    turboButton.addEventListener("pointerup", stopTurbo);
+    turboButton.addEventListener("pointercancel", stopTurbo);
+    turboButton.addEventListener("lostpointercapture", stopTurbo);
+}
 
 // Detectar teclas presionadas
 document.addEventListener("keydown", (event) => {
@@ -100,7 +194,8 @@ function moveShip() {
 document.addEventListener("keydown", (event) => {
     if (event.key === " " || event.key === "Spacebar") shootBullet();
 });
-document.addEventListener("click", shootBullet);
+
+//document.addEventListener("click", shootBullet);
 
 function shootBullet() {
     const bullet = document.createElement("div");
