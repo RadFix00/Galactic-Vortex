@@ -125,3 +125,71 @@ section {
    
 }
 
+.tabla-puntos{
+    max-width: 16%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.tabla-puntos h1{
+    font-size: 4em;
+    color: yellow;
+}
+
+.tabla-puntos p{
+    padding: 10px;
+    font-size: 1.5em;
+}
+
+.tabla-puntos h2{
+    color: red;
+}
+
+@media (max-width: 660px) {
+
+    #gameArea {
+        width: 100vw;
+        height: 85vh;
+    }
+
+    #scoreBoard{
+        display: none;
+    }
+
+    .line {
+        border: none;
+        align-items: center;
+    }
+
+    #bestStreakBoard{
+        display: none;
+    }
+
+    #streakBoard{
+        display: none;
+    }
+
+    .tabla-puntos{
+        display:block;
+        align-items:normal;
+        justify-content: center;
+        max-width: 100%;
+    }
+
+    .tabla-puntos h1{
+        display: none;
+    }
+
+    .tabla-puntos p{
+        display: none;
+    }
+
+    .tabla-puntos h2 {
+        position: absolute;
+        right: 30px;
+        color: red;
+    }
+
+}
+

@@ -45,6 +45,29 @@ $result = $conn->query($sql);
         .btn {
             font-size: 1.5rem;
         }
+
+        @media (max-width: 660px) {
+
+           .ranking-card {
+                margin-top: 5.5em;
+                background: rgba(0, 0, 0, 0.75);
+                border: 2px solid white;
+                box-shadow: 0 0 20px white;
+            }
+
+            h1 {
+                font-size: 3rem;
+            }
+
+            table {
+                font-size: 1rem;
+            }
+
+            .btn {
+                font-size: 1rem;
+            }
+
+        }
     </style>
 </head>
 <body>

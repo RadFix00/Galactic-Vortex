@@ -245,7 +245,7 @@ function gameOver() {
         },
         body: JSON.stringify({
             puntaje: score,
-            mejor_combo: currentStreak,
+            mejor_combo: bestStreak,
             tiempo_vivo: tiempoVivo
         })
     })

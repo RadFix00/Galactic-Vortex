@@ -29,9 +29,45 @@ section {
     
 }
 
-div form {
-    border: 1px solid red;
+.game-form {
+    width: 100%;
 }
+
+.game-form input,
+.game-button {
+    display: block;
+    width: 15em;
+    margin-left: auto !important;
+    margin-right: auto !important;
+}
+
+.game-form input {
+    padding: 10px 15px;
+    font-size: 22px;
+    text-align: center;
+}
+
+.game-button {
+    box-sizing: border-box;
+}
+
+.img-fluid {
+    filter: drop-shadow(0px 0px 60px black);
+}
+
+.container a {
+    margin: 1.6em auto;
+}
+
+.terminos {
+    font-size: 22px;
+}
+
+.navbar {
+    left: 10px;
+    z-index: 999;
+}
+
 
 @keyframes slide {
 
@@ -49,9 +85,6 @@ div form {
     
 }
 
-.img-fluid {
-    filter: drop-shadow(0px 0px 60px black);
-}
 
 @keyframes zoom {
 
@@ -67,20 +100,6 @@ div form {
         transform: scale(1.08);
     }
 
-}
-
-
-.container a {
-    margin: 1.6em auto;
-}
-
-.terminos {
-    font-size: 22px;
-}
-
-.navbar {
-    left: 10px;
-    z-index: 999;
 }
 
 @media (max-width: 1380px) {
@@ -104,29 +123,13 @@ div form {
 
     .container {
         margin-top: 30vh;
+        
+    }
+
+    .navbar img {
+        width: 40px;
+       height: 40px;
     }
 
 }
 
-.game-form {
-    width: 100%;
-    border: 1px solid red;
-}
-
-.game-form input,
-.game-button {
-    display: block;
-    width: 15em;
-    margin-left: auto !important;
-    margin-right: auto !important;
-}
-
-.game-form input {
-    padding: 10px 15px;
-    font-size: 22px;
-    text-align: center;
-}
-
-.game-button {
-    box-sizing: border-box;
-}

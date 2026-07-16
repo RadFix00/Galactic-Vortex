@@ -32,26 +32,7 @@
         <link href="https://fonts.googleapis.com/css2?family=VT323&display=swap" rel="stylesheet">  
 
         <style>
-        .tabla-puntos{
-            max-width: 16%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
-
-        .tabla-puntos h1{
-            font-size: 4em;
-            color: yellow;
-        }
-
-        .tabla-puntos p{
-            padding: 10px;
-            font-size: 1.5em;
-        }
-
-        .tabla-puntos h2{
-            color: red;
-        }
+        
         </style>
     </head>
 
@@ -76,7 +57,7 @@
             <div class="tabla-puntos">
                 <ul class="nav flex-column">
                     <li class="nav-item">
-                        <h1 class="p-1 d-inline-block">5 Mejores</h1>
+                        <h1 class="p-1">5 Mejores</h1>
                         <?php if (!empty($mejoresJugadores)): ?>
 
                             <?php foreach ($mejoresJugadores as $posicion => $jugador): ?>
